@@ -1,5 +1,5 @@
 #============================================#
-#    Automato Finito não Deterministico      #
+#    Automato Finito não Deterministico 2.0  #
 #           FLA UDESC BCC 2015.2             #
 #--------------------------------------------#
 #   Made with ♥ by:                          #
@@ -7,7 +7,9 @@
 #============================================#
 #   ◆ Configuração                           #
 #--------------------------------------------#
-
+# UPDATE
+#	Compatível com RUBY 2015.5 (3.64)
+#		LENGHT -> SIZE
 def main ()
 	# Variavel global de estados
 	$estados = ["q0", "q1", "q2"]
@@ -57,11 +59,11 @@ def simular(palavra, estados, movimento = 0)
 	
 	#   Verifica se o estado está na ultima letra e 
 	# está em um estado final e retorna que o automato deu positivo!
-	if palavra.length == movimento and not ($final & estados).empty?
+	if palavra.size == movimento and not ($final & estados).empty?
 		true
 	#   Se não, verifica se o movimento já é o tamanho da palavra. Como ele recusou a anterior,
 	# ele não possúi estado final.
-	elsif palavra.length == movimento
+	elsif palavra.size == movimento
 		false
 	else
 	
